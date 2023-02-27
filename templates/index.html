@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href=" {{url_for('static', filename='images/favicon.ico')}}"
+    />
+    <title>WinBot</title>
+  </head>
+  <body>
+    <div id="spinner" class="spinner">
+      <img src="../static/images/spin.gif" alt="spinner" />
+    </div>
+    <nav>
+      <section class="title">
+        <div class="bot">
+          <img src="../static/images/bot.gif" alt="winbot" />
+        </div>
+        <h1>WinBot</h1>
+      </section>
+    </nav>
+    <main>
+      <h2>Answer:</h2>
+      <section class="response">
+        {% for message in get_flashed_messages()%}
+        <p>{{message}}</p>
+        {% endfor %}
+      </section>
+      <h2>Question:</h2>
+      <section class="query">
+        <form action="answer" method="post">
+          <input
+            type="text"
+            id="question"
+            name="question_input"
+            autocomplete="off"
+            autofocus
+          />
+          <button Onclick="showDiv()">Submit</button>
+        </form>
+      </section>
+    </main>
+  </body>
+  <script>
+    function showDiv() {
+      document.getElementById("spinner").style.display = "block";
+    }
+  </script>
+</html>
