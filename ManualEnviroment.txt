@@ -1,0 +1,6 @@
+conda create --name <enviroment_name>
+conda install -c anaconda numpy
+conda install -c anaconda pandas
+pip install transformers
+
+conda install pytorch -c pytorch

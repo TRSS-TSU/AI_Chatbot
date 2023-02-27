@@ -1,0 +1,45 @@
+﻿question,answer
+What is the authentication protocol used on Windows Challenge/Response systems?,NTLM
+What are some of the disadvantages of using NTLM authentication?,"single authentication, security vulnerabilities, and outdated cryptography"
+Why is NTLM systems vulnerable?,simplistic form of password hashing 
+What is a single authentication method?,NTLM
+What does NTLM use to establish the user?,challenge-response protocol
+What is the process of using two or more pieces of information to confirm the identity of the user?,multifactor authentication
+What does NTLM not support?,multifactor authentication 
+What kind of attacks is NTLM systems vulnerable to ?,pass-the-hash and brute-force attacks
+What does NTLM not do to make passwords more secure?,does not leverage the latest advances in algorithmic thinking or encryption to make passwords more secure
+What is the authentication protocol used on networks that include systems running the Windows operating system and on stand-alone systems?,Windows Challenge/Response
+What adds greater security than NTLM to systems on a network?,The Microsoft Kerberos security package
+where information related to the user's password is kept,domain controller
+What does NTLM need to be used on stand-alone systems?,logon authentication
+What do NTLM credentials consist of?,"domain name, a user name, and a one-way hash of the user's password"
+What does NTLM use to authenticate a user without sending the user's password over the wire?,an encrypted challenge/response protocol
+The NTLM system requesting authentication must perform,a calculation that proves it has access to the secured NTLM credentials
+Interactive NTLM authentication over a network typically involves two systems,a client system and domain controller
+What three systems do noninteractive authentication involve?,"a client, a server, and a domain controller"
+during interactive authentication what does the user provide,"a domain name, user name, and password"
+What does the client compute?,a cryptographic hash of the password
+In what format does the client send the user name to the server?,plaintext
+What is the 8-byte random number that the server generates called?,a challenge or nonce
+The client encrypts the challenge with what?,the hash of the user's password
+"the server sends the user name, challenge, and the response to what?",domain controller
+What does the domain controller use to retrieve the hash of the user's password from the Security Account Manager database?,the user name
+What does the domain controller compare the encrypted challenge computed to the response computed by the client?,"If they are identical, authentication is successful"
+the application should not access to what,NTLM security package 
+What does Negotiate use to enable your application to take advantage of more advanced security protocols if they are supported by the systems involved in the authentication?,Negotiate security package
+What does Negotiate allow your application to take advantage of if they are supported by the systems involved in the authentication?,more advanced security protocols
+The Negotiate security package selects between Kerberos and what?,NTLM
+Negotiate selects Kerberos unless ,it cannot be used by one of the systems involved in the authentication
+What is outdated in NTLM authentication?,cryptography
+Pass-the-hash and brute force are two modes of what?,attacks
+What is the NTLM authentication protocol used on?,networks that include systems running the Windows operating system and on stand-alone systems
+What is kept in the domain controller?,information related to the user's password
+What is the name of the system that does the authentication calculations on behalf of the server?,domain controller
+What is the system where the user is requesting authentication?,client system
+Negotiate selects which unless it cannot be used by one of the systems involved in the authentication?,Kerberos
+What is the security package that your application should not access directly?,NTLM
+"If the systems involved in the negotiation are identical, what is successful?",authentication
+What is the best way to take advantage of advanced security protocols?,Negotiate
+What is the advantage of using Negotiate?,allows your application to take advantage of more advanced security protocols
+What does the domain controller compare the encrypted challenge it computed to?,the response computed by the client
+What is required for a security protocol to be supported by Negotiate?,the systems involved in the authentication
